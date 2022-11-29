@@ -26,7 +26,7 @@ module.exports = {
 		// Next.js
 		'@typescript-eslint/triple-slash-reference': 'off',
 		'react/react-in-jsx-scope': 'off',
-
+		"react/no-unescaped-entities": "off",
 		// Prettier handles these
 		'@typescript-eslint/comma-dangle': 'off',
 		'react/function-component-definition': 'off',
