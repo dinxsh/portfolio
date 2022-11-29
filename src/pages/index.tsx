@@ -59,7 +59,7 @@ export default function Index(props: Props) {
 			<div className="space-y-4">
 				<div className="flex items-center space-x-3">
 					<a
-						href="https://github.com/alii/website"
+						href="https://github.com/dinxsh/portfolio-final"
 						target="_blank"
 						rel="noreferrer"
 						aria-label="GitHub Profile"
@@ -121,12 +121,12 @@ export default function Index(props: Props) {
 
 				<h1 className="text-3xl font-bold sm:text-4xl md:text-6xl">
 					Hey, I'm{' '}
-					<span className="text-blue-700 dark:text-white">Alistair</span> ✌️
+					<span className="text-blue-700 dark:text-white">Dinesh</span> ✌️
 				</h1>
 
 				<p className="opacity-80">
-					I'm a <span suppressHydrationWarning>~{age.toPrecision(7)}</span> year
-					old software engineer from the United Kingdom. I'm interested in full
+					I'm a <span suppressHydrationWarning>~{age.toPrecision(1)}</span> year
+					old software engineer from India. I'm interested in full
 					stack web development including large scale frontend applications and
 					performant serverside code.
 				</p>
@@ -135,12 +135,12 @@ export default function Index(props: Props) {
 			<div className="space-y-4">
 				<h1 className="text-2xl font-bold sm:text-3xl">What do I do? 💭</h1>
 				<p className="opacity-80">
-					Honestly, a few too many things to count on one hand... I'm currently
-					having a fantastic time working with{' '}
-					<a href="https://hop.io" target="_blank" rel="noreferrer">
-						Hop
+					Honestly, a few too many things to count on one hand... I'm currently 
+					working on{' '}
+					<a href="https://github.com/dinxsh/pitch" target="_blank" rel="noreferrer">
+						Pitch
 					</a>{' '}
-					- we're building an amazing modern cloud platform. Below are some of
+					- we're building an amazing platform for startups. Below are some of
 					the more popular open source projects I've worked on. In total, the
 					following repos have earnt me{' '}
 					{projects.reduce<number>(

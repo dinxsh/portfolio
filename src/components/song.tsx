@@ -1,7 +1,7 @@
 import {SiSpotify} from 'react-icons/si';
 import {useLanyard} from 'use-lanyard';
 
-export const DISCORD_ID = '268798547439255572';
+export const DISCORD_ID = '756368919555604540';
 
 export function Song() {
 	const {data: user} = useLanyard(DISCORD_ID);

@@ -1,6 +1,6 @@
 import Document, {Head, Html, Main, NextScript} from 'next/document';
 
-export default class AlistairDocument extends Document {
+export default class DineshDocument extends Document {
 	render() {
 		return (
 			<Html lang="en">
@@ -14,7 +14,7 @@ export default class AlistairDocument extends Document {
 					<meta name="theme-color" content="#ffffff" />
 					<meta
 						name="description"
-						content="Alistair Smith, Full–stack TypeScript engineer from the UK"
+						content="Dinesh, Full–stack TypeScript engineer from India"
 					/>
 					<link rel="preconnect" href="https://fonts.googleapis.com" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
