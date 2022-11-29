@@ -82,7 +82,7 @@ export default function Index(props: Props) {
 						<p className="inline-flex items-center space-x-2">
 							<a
 								target="_blank"
-								href={`https://dinxsh.vercel.com/?q=!maps+rajkot+india`}
+								href="https://dinxsh.vercel.com/?q=!maps+rajkot+india"
 								rel="noreferrer"
 								className="flex items-center rounded-full bg-neutral-200 px-2 pr-3 text-neutral-600 no-underline transition-colors dark:bg-neutral-700 dark:text-white dark:text-opacity-50 dark:hover:bg-neutral-800"
 							>
