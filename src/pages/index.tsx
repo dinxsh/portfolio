@@ -135,7 +135,7 @@ export default function Index(props: Props) {
 			<div className="space-y-4">
 				<h1 className="text-2xl font-bold sm:text-3xl">What do I do? 💭</h1>
 				<p className="opacity-80">
-					Honestly, a few too many things to count on one hand... I'm currently 
+					Honestly, a few too many things to count on one hand... I'm currently
 					working on{' '}
 					<a href="https://github.com/dinxsh/pitch" target="_blank" rel="noreferrer">
 						Pitch
