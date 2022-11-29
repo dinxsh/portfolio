@@ -82,13 +82,13 @@ export default function Index(props: Props) {
 						<p className="inline-flex items-center space-x-2">
 							<a
 								target="_blank"
-								href={`https://search.alistair.sh/?q=!maps+rajkot+india`}
+								href={`https://dinxsh.vercel.com/?q=!maps+rajkot+india`}
 								rel="noreferrer"
 								className="flex items-center rounded-full bg-neutral-200 px-2 pr-3 text-neutral-600 no-underline transition-colors dark:bg-neutral-700 dark:text-white dark:text-opacity-50 dark:hover:bg-neutral-800"
 							>
 								<span>
 									<HiOutlineLocationMarker className="inline dark:text-white" />
-									&nbsp;Rajkot, India
+									&nbsp;
 								</span>
 
 								<span className="-mb-0.5">
@@ -299,7 +299,7 @@ function ProjectCard({repo: project}: {repo: PinnedRepo}) {
 
 export const getStaticProps: GetStaticProps<Props> = async function () {
 	const pinnedRepos = await fetch(
-		'https://gh-pinned.nxl.sh/api/user/alii',
+		'https://gh-pinned.nxl.sh/api/user/dinxsh',
 	).then(async response => response.json() as Promise<PinnedRepo[]>);
 
 	const request = new Request(
