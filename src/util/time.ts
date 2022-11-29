@@ -1,4 +1,4 @@
-const birth = Date.parse(new Date('2 November 2004 07:00 GMT').toString());
+const birth = Date.parse(new Date('3 May 2005 07:00 GMT').toString());
 
 const msSinceBirth = Date.parse(Date()) - birth;
 

@@ -98,7 +98,7 @@ export default function Talk() {
 
 				<div>
 					<ul className="list-inside list-disc space-y-2 pt-5 md:float-right">
-						<ListItemReversed icon={HiOutlineMail} text="hi@alistair.sh" />
+						<ListItemReversed icon={HiOutlineMail} text="dineshtalwadker@gmail.com" />
 						<ListItemReversed
 							icon={SiDiscord}
 							text={

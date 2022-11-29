@@ -44,14 +44,14 @@ type Props = {
 };
 
 export default function Index(props: Props) {
-	const {data: projects = props.pinnedRepos} = useGitHubPinnedRepos('alii');
+	const {data: projects = props.pinnedRepos} = useGitHubPinnedRepos('dinxsh');
 
 	const {data: lanyard} = useLanyard(DISCORD_ID, {
 		initialData: props.lanyard,
 	});
 
 	const boostedActivity = lanyard?.activities.find(
-		activity => activity.application_id === '932730208820265011',
+		activity => activity.application_id === '756368919555604540',
 	);
 
 	return (
@@ -69,7 +69,7 @@ export default function Index(props: Props) {
 					</a>
 
 					<a
-						href="https://twitter.com/alistaiir"
+						href="https://twitter.com/dineshcodes"
 						target="_blank"
 						rel="noreferrer"
 						aria-label="Twitter Profile"
@@ -82,13 +82,13 @@ export default function Index(props: Props) {
 						<p className="inline-flex items-center space-x-2">
 							<a
 								target="_blank"
-								href={`https://search.alistair.sh/?q=!maps+${lanyard.kv.location}`}
+								href={`https://search.alistair.sh/?q=!maps+rajkot+india`}
 								rel="noreferrer"
 								className="flex items-center rounded-full bg-neutral-200 px-2 pr-3 text-neutral-600 no-underline transition-colors dark:bg-neutral-700 dark:text-white dark:text-opacity-50 dark:hover:bg-neutral-800"
 							>
 								<span>
 									<HiOutlineLocationMarker className="inline dark:text-white" />
-									&nbsp;
+									&nbsp;Rajkot, India
 								</span>
 
 								<span className="-mb-0.5">
@@ -125,7 +125,7 @@ export default function Index(props: Props) {
 				</h1>
 
 				<p className="opacity-80">
-					I'm a <span suppressHydrationWarning>~{age.toPrecision(1)}</span> year
+					I'm a <span suppressHydrationWarning>~{age.toPrecision(7)}</span> year
 					old software engineer from India. I'm interested in full
 					stack web development including large scale frontend applications and
 					performant serverside code.

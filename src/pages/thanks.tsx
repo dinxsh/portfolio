@@ -7,7 +7,7 @@ export default function Thanks() {
 				free to checkout my GitHub linked on the home page, there's some cool
 				things on there 😉
 				<br />
-				<br />– Ali
+				<br />– Dinesh
 			</p>
 		</div>
 	);

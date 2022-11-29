@@ -14,7 +14,7 @@ export default class DineshDocument extends Document {
 					<meta name="theme-color" content="#ffffff" />
 					<meta
 						name="description"
-						content="Dinesh, Full–stack TypeScript engineer from India"
+						content="Dinesh, Full–stack Engineer from India"
 					/>
 					<link rel="preconnect" href="https://fonts.googleapis.com" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
