@@ -1,6 +1,5 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import IORedis from 'ioredis';
 import ms from 'ms';
 import type {GetStaticProps} from 'next';
 import Image from 'next/image';
@@ -14,10 +13,8 @@ import {Details} from '../components/details';
 import {Modal} from '../components/modal';
 import {
 	LAST_FM_API_KEY,
-	REDIS_URL,
 	SPOTIFY_CLIENT_ID,
 	SPOTIFY_CLIENT_SECRET,
-	SPOTIFY_REDIS_KEYS,
 } from '../server/constants';
 import type {LastFMGetTrack} from '../server/last-fm';
 import {LastFM} from '../server/last-fm';
@@ -214,80 +211,3 @@ function Track({track}: {track: TrackObjectFull}) {
 		</>
 	);
 }
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-	const redis = new IORedis(REDIS_URL);
-
-	const [token, refresh] = await redis.mget(
-		SPOTIFY_REDIS_KEYS.AccessToken,
-		SPOTIFY_REDIS_KEYS.RefreshToken,
-	);
-
-	let api: SpotifyWebAPI;
-	let revalidate = 120;
-
-	if (token) {
-		// We have a token, so no need to care about refreshing it
-		api = new SpotifyWebAPI({
-			clientId: SPOTIFY_CLIENT_ID,
-			clientSecret: SPOTIFY_CLIENT_SECRET,
-			accessToken: token,
-		});
-	} else if (refresh) {
-		// No token, but we have a refresh token, so we can refresh it
-		api = new SpotifyWebAPI({
-			clientId: SPOTIFY_CLIENT_ID,
-			clientSecret: SPOTIFY_CLIENT_SECRET,
-			refreshToken: refresh,
-		});
-
-		const result = await api.refreshAccessToken();
-
-		api.setAccessToken(result.body.access_token);
-
-		// Expires is in seconds as per https://developer.spotify.com/documentation/general/guides/authorization/code-flow/
-		const expiration = result.body.expires_in - 30;
-
-		await redis.set(
-			SPOTIFY_REDIS_KEYS.AccessToken,
-			result.body.access_token,
-			'EX',
-			expiration,
-		);
-
-		// We should revalidate when the token expires
-		// but we can do it slightly before (30 seconds before)
-		revalidate = expiration;
-
-		if (result.body.refresh_token) {
-			// If spotify wants us to use a new refresh token, we'll need to update it
-			await redis.set(
-				SPOTIFY_REDIS_KEYS.RefreshToken,
-				result.body.refresh_token,
-			);
-		}
-	} else {
-		throw new Error(
-			'No Spotify tokens available. Please visit http://localhost:3000/api/spotify/oauth to generate keys.',
-		);
-	}
-
-	// API reference for getting top tracks:
-	// https://developer.spotify.com/documentation/web-api/reference/#/operations/get-users-top-artists-and-tracks
-	const tracks = await api.getMyTopTracks({
-		time_range: 'short_term',
-	});
-
-	await redis.quit();
-
-	const lfm = new LastFM(LAST_FM_API_KEY);
-	const topLFMTracks = await lfm.getTopTracks('aabbccsmith', '12month');
-
-	return {
-		props: {
-			topTracks: tracks.body.items,
-			randomLastFMTrack: rand(topLFMTracks),
-		},
-		revalidate,
-	};
-};
