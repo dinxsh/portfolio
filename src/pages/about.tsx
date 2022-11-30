@@ -1,36 +1,11 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import ms from 'ms';
-import type {GetStaticProps} from 'next';
 import Image from 'next/image';
-import {useState} from 'react';
-import {HiExternalLink} from 'react-icons/hi';
-import {MdExplicit} from 'react-icons/md';
-import {SiSpotify} from 'react-icons/si';
-import SpotifyWebAPI from 'spotify-web-api-node';
 import Banner from '../../public/banner.jpg';
-import {Details} from '../components/details';
-import {Modal} from '../components/modal';
-import {
-	LAST_FM_API_KEY,
-	SPOTIFY_CLIENT_ID,
-	SPOTIFY_CLIENT_SECRET,
-} from '../server/constants';
-import type {LastFMGetTrack} from '../server/last-fm';
-import {LastFM} from '../server/last-fm';
-import {rand} from '../util/types';
-
-import TrackObjectFull = SpotifyApi.TrackObjectFull;
-import AlbumObjectFull = SpotifyApi.AlbumObjectFull;
 
 dayjs.extend(relativeTime);
 
-type Props = {
-	topTracks: TrackObjectFull[];
-	randomLastFMTrack: LastFMGetTrack;
-};
-
-export default function AboutPage({topTracks, randomLastFMTrack}: Props) {
+export default function AboutPage() {
 	return (
 		<div className="space-y-8">
 			<h1 className="block text-3xl font-bold sm:text-4xl md:text-6xl">
