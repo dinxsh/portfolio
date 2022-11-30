@@ -1,7 +1,7 @@
 import {useRouter} from 'next/router';
 import {toast} from 'react-hot-toast';
 import {HiOutlineMail} from 'react-icons/hi';
-import {RiPhoneLine, RiSendPlane2Line} from 'react-icons/ri';
+import {RiSendPlane2Line} from 'react-icons/ri';
 import {SiDiscord, SiTwitter} from 'react-icons/si';
 import {useLanyard, type Data} from 'use-lanyard';
 import {ListItemReversed} from '../components/list-item';
