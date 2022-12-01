@@ -104,7 +104,7 @@ export default function App({
 			<li className="shrink-0">
 				<a
 					target="_blank"
-					href="blog"
+					href="https://dev.to/blazedev"
 					rel="noreferrer"
 					className={navlinkClassname}
 				>
