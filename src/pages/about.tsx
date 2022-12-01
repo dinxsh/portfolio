@@ -39,7 +39,7 @@ export default function AboutPage() {
 					{/**/}. Programming since ten, I've learned a lot about core
 					programming principles, scaling, and systems architecture. A large
 					proportion of my life is spent listening to all sorts of electronic
-					music, and below you can see what I've been enjoying recently...
+					music.
 				</p>
 			</div>
 		</div>

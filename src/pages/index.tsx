@@ -88,7 +88,7 @@ export default function Index(props: Props) {
 							>
 								<span>
 									<HiOutlineLocationMarker className="inline dark:text-white" />
-									&nbsp;
+									&nbsp; Rajkot, India
 								</span>
 
 								<span className="-mb-0.5">
