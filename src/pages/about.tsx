@@ -12,18 +12,6 @@ export default function AboutPage() {
 				About
 			</h1>
 
-			<div className="text-neutral-900/30 transition-all hover:text-neutral-900 dark:text-white/20 dark:hover:text-white/100 lg:-mx-8">
-				<Image
-					alt="A photo of me at my desk."
-					src={Banner}
-					width={1000}
-					height={400}
-					placeholder="blur"
-					className="block rounded-xl object-cover shadow-xl shadow-neutral-300 dark:shadow-none"
-				/>
-				<span className="sr-only text-sm">me at my desk</span>
-			</div>
-
 			<div className="space-y-8">
 				<p>
 					Yo! I'm a full-stack engineer from India. I care about
